@@ -1,0 +1,286 @@
+/* Reset Default Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: black;
+    font-family: Arial, sans-serif;
+}
+
+/* Navbar */
+.navbar {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 100px;
+    background-color: black;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 9999;
+    padding: 0 20px;
+}
+
+/* Logo */
+.nav_img {
+    height: 100px;
+    padding: 5px;
+}
+
+/* Navigation Links */
+.quicklinks {
+    display: flex;
+    align-items: center;
+    list-style: none;
+}
+
+.quicklinks li {
+    margin-right: 20px;
+}
+
+.quicklinks li a {
+    color: white;
+    padding: 15px 30px;
+    border-radius: 50px;
+    background: linear-gradient(to right, #43cea2, #185a9d);
+    text-decoration: none;
+    font-size: 18px;
+    transition: 0.3s;
+    font-family: "Grechen Fuemen", serif;
+}
+
+.quicklinks li a:hover {
+    background: linear-gradient(to right, #185a9d, #43cea2);
+}
+
+/* Hamburger Menu (Mobile) */
+.hamburger {
+    display: none;
+    font-size: 30px;
+    cursor: pointer;
+    background: none;
+    border: none;
+    padding: 10px;
+}
+
+/* Body Content */
+.body_content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    padding-top: 100px; /* To avoid overlap with fixed navbar */
+}
+
+.body_img {
+    width: 800px;
+    height: auto;
+    border-radius: 20px; /* Optional: Rounds the corners slightly */
+    position: relative;
+}
+
+/* Blurred border effect */
+.body_img::before {
+    content: "";
+    position: absolute;
+    top: -15px;
+    left: -15px;
+    right: -15px;
+    bottom: -15px;
+    background: inherit;
+    filter: blur(100px);
+    z-index: -1;
+    border-radius: 20px;
+}
+
+/* Alternative: Fading edges effect */
+.body_img {
+    -webkit-mask-image: radial-gradient(circle, rgba(0, 0, 0, 1) 50%, rgba(0, 0, 0, 0) 100%);
+    mask-image: radial-gradient(circle, rgba(0, 0, 0, 1) 50%, rgba(0, 0, 0, 0) 100%);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .body_content {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .body_img {
+        width: 90%;
+    }
+}
+
+
+/* Text Container */
+.body_text {
+    flex: 1;
+    text-align: right;
+    padding-left: 50px;
+    max-width: 600px;
+}
+
+/* Headings */
+.invideotext {
+    background: linear-gradient(to right, #43cea2, #185a9d);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-size: 100px;
+    font-weight: bold;
+    font-family: "Creepster", serif;
+}
+
+.invideopara {
+    background: linear-gradient(to right, #185a9d, #43cea2);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-size: 25px;
+    line-height: 1.5;
+    font-family: "Moon Dance", serif;
+}
+
+/* Quicklinks Section */
+.body_quicklinks {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+    margin-top: 40px;
+    padding: 0%;
+    margin: 50px;
+}
+
+
+/* Individual Quicklink Box */
+.ql_1 {
+    width: 350px;
+    height: 300px; /* Allow height to adjust based on content */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    box-shadow: 1px 1px 10px gray;
+    border-radius: 20px;
+    background: white; /* Ensure content doesn't overflow */
+    margin: 0px;
+    padding: 0;
+}
+
+/* Image */
+.body_ql_img {
+    width: 100%;
+    height: 250px; /* Adjust height as needed */
+    object-fit: cover; /* Ensures image fills container without distortion */
+    border-radius: 20px;
+    display: block; /* Removes extra space below the image */
+    margin-bottom: 50px; /* Ensures no unwanted margin */
+    padding: 0;
+}
+
+/* Text Overlay */
+.ql_text {
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 22px;
+    font-weight: bold;
+    text-align: center;
+    
+    width: 80%;
+    margin: 0;
+    padding: 5px;
+}
+.body_quicklinks .ql_1 .ql_text a{
+    color: white;
+    text-decoration: none;
+    background: linear-gradient(to right, #43cea2, #185a9d);
+    padding: 10px 15px;
+    border-radius: 10px;
+}
+.body_quicklinks .ql_1 .ql_text a:hover{
+    background: linear-gradient(to right, #185a9d, #43cea2);
+
+}
+/* Mobile Responsive */
+@media screen and (max-width: 768px) {
+    /* Show Hamburger */
+    .hamburger {
+        display: block;
+        color: white;
+    }
+    .navbar{
+        height: 80px;
+    }
+    /* Hide Menu Initially */
+    .quicklinks {
+        display: none;
+        flex-direction: column;
+        background-color: black;
+        position: absolute;
+        top: 80px;
+        left: 0;
+        width: fit-content;
+
+        padding: 60px 20px;
+        row-gap: 50px;
+    }
+    .nav_img{
+        height: 60px;
+    }
+    /* Show menu when toggled */
+    .quicklinks.show {
+        display: flex;
+    }
+
+    .quicklinks li {
+        padding: 15px 0;
+        width: 100%;
+    }
+
+    /* Stack Image & Text */
+    .body_content {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .body_img {
+        width: 100%;
+        max-width: 800px;
+        margin-top: 100px;
+    }
+
+    .body_text {
+        text-align: center;
+        padding-left: 0;
+        padding-top: 20px;
+    }
+    .invideotext{
+        font-size: 50px;
+        
+    }
+    .body_quicklinks{
+        padding: 0;
+    }
+    .ql_1{
+        row-gap: 30px;
+        margin-top: 60px;
+        padding: 0;
+    }
+    .body_ql_img{
+        row-gap: 30px;
+        margin-top: 100px;
+        padding: 0;
+    }
+    #ql{
+        margin-top: 60px;
+        height: 200px;
+    }
+    #bql{
+        height: 200px;
+    }
+}

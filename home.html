@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"> 
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"> 
+    <link rel="icon" href="Picsart_25-02-19_22-35-15-258.png">
+    <link rel="stylesheet" href="home.css">
+    <title>Infrontofus</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Creepster&family=Grechen+Fuemen&family=Monomakh&family=Moon+Dance&family=Piedra&family=Sacramento&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar">
+        <img class="nav_img" src="mainlogo2.png" alt="logo">
+
+        <!-- Hamburger Menu -->
+        <div class="hamburger" onclick="toggleMenu()">&#9776;</div>
+
+        <!-- Navigation Links -->
+        <ul class="quicklinks" id="nav-links">
+            <li><a class="qlinks" href="">Home</a></li>
+            <li><a class="qlinks" href="">About</a></li>
+            <li><a class="qlinks" href="">Blog</a></li>
+            <li><a class="qlinks" href="">Contact</a></li>
+        </ul>
+    </nav>
+
+    <!-- Main Content -->
+    <div class="body_content">
+        <img class="body_img" src="cover2.jpg" alt="body_image">
+        <div class="body_text">
+            <h1 class="invideotext">INFRONT OF US</h1>
+            <h2 class="invideopara">
+                <span class="intext_span">The INFRONT OF US</span> is a distinguished school and development centre committed to advancing professional excellence and personal growth. 
+                We curate an array of immersive learning experiences, including specialized workshops, industry expos, and insightful seminars, all designed to bridge the gap between theory and practice.
+            </h2>
+        </div>
+    </div>
+
+    <div class="body_quicklinks" id="bql">
+        <div class="ql_1" id="bql">
+            <img class="body_ql_img" src="bql1.jpg">
+            <h1 class="ql_text"><a href="">ABOUT US</a></h1>
+        </div>
+        <div class="ql_1" id="ql">
+            <img class="body_ql_img" src="bql2.jpg">
+            <h1 class="ql_text"><a href="">BLOGS</a> </h1>
+        </div>
+        <div class="ql_1" id="ql">
+            <img class="body_ql_img" src="bql3.jpg">
+            <h1 class="ql_text"><a href="">CONTACT US</a> </h1>
+        </div>
+    </div>
+     
+
+  
+
+    <!-- JavaScript for Mobile Menu -->
+    <script>
+        function toggleMenu() {
+            document.getElementById("nav-links").classList.toggle("show");
+        }
+        
+    function toggleMenu() {
+        let navLinks = document.getElementById("nav-links");
+        navLinks.classList.toggle("show");
+
+        // Close menu when clicking on a link
+        let links = navLinks.querySelectorAll("a");
+        links.forEach(link => {
+            link.addEventListener("click", () => {
+                navLinks.classList.remove("show");
+            });
+        });
+    }
+
+
+    </script>
+</body>
+</html>
